@@ -9,7 +9,7 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get(`${API_BASE}/newOrder`).then((res) => {
+    axios.get(`${API_BASE}/getHoldings`).then((res) => {
       console.log(res.data);
       setAllHoldings(res.data);
     });

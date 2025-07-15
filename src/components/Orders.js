@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-
+const API_BASE = process.env.REACT_APP_API_URL;
 const Orders = () => {
   const [allOrders, setAllorders] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allOrders").then((res) => {
+    axios.get(`${API_BASE}/allOrders`).then((res) => {
       console.log(res.data);
       setAllorders(res.data);
     });
