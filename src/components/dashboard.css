@@ -1,0 +1,46 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
+    background: #f5f7fa;
+    overflow-x: hidden;
+  }
+  
+  /* Sidebar/Top Watchlist */
+  .watchlist-container {
+    width: 28%;
+    min-width: 280px;
+    max-width: 360px;
+    background: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Main content */
+  .content {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+  
+  /* Responsive layout */
+  @media (max-width: 1024px) {
+    .dashboard-container {
+      flex-direction: column;
+    }
+  
+    .watchlist-container {
+      width: 100%;
+      border-right: none;
+      border-bottom: 1px solid #e0e0e0;
+      padding: 16px;
+    }
+  
+    .content {
+      padding: 16px;
+    }
+  }
+  
