@@ -22,6 +22,20 @@ const BuyActionWindow = ({ uid }) => {
     }
   };
 
+  const handleSellClick = async() => {
+    try {
+      await axios.post(`${API_BASE}/newOrder`, {
+        name: uid,
+        qty: parseInt(stockQuantity),
+        price: parseFloat(stockPrice),
+        mode: "SELL",
+      });
+      GeneralContext.closeBuyWindow();
+    } catch (error) {
+      console.error("Order failed:", error);
+    }
+  };
+
   const handleCancelClick = () => {
     GeneralContext.closeBuyWindow();
   };
@@ -59,6 +73,9 @@ const BuyActionWindow = ({ uid }) => {
         <div>
           <button className="btn btn-blue" onClick={handleBuyClick}>
             Buy
+          </button>
+          <button className="btn btn-red" onClick={handleSellClick}>
+            Sell
           </button>
           <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
             Cancel
