@@ -258,7 +258,7 @@ const WatchListActions = ({ uid }) => {
         >
           <button className="sell">Sell</button> */}
         </Tooltip>
-        <Tooltip
+        {/* <Tooltip
           title="Analytics (A)"
           placement="top"
           arrow
@@ -271,8 +271,8 @@ const WatchListActions = ({ uid }) => {
         <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
           <button className="action">
             <MoreHoriz className="icon" />
-          </button>
-        </Tooltip>
+          </button> */}
+        {/* </Tooltip> */}
       </span>
     </span>
   );
