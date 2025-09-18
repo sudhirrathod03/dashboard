@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import "./order.css"
 import axios from "axios";
 const API_BASE = process.env.REACT_APP_API_URL;
 const Orders = () => {
