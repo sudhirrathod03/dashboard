@@ -3,47 +3,64 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 const API_BASE = process.env.REACT_APP_API_URL;
 const Orders = () => {
-  const [allOrders, setAllorders] = useState([]);
+  const [orders, setOrders] = useState([]);
+  const [showOrders, setShowOrders] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  useEffect(() => {
-    axios.get(`${API_BASE}/allOrders`).then((res) => {
-      console.log(res.data);
-      setAllorders(res.data);
-    });
-  }, []);
+  const fetchOrders = async () => {
+    try {
+      setLoading(true);
+      setError("");
+      const response = await axios.get(`${API_BASE}/allOrders`)
+      setOrders(response.data);
+      setShowOrders(true);
+    } catch (err) {
+      console.error("Failed to fetch orders", err);
+      setError("Failed to fetch orders. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="orders">
-      <div className="no-orders">
-        <Link to={"/"} className="btn">
-          Get started
-        </Link>
-    
-        <div className="order-table" style={{margin:"20px"}}>
-        {allOrders.length > 0 && (
-          <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Mode</th>
-              </tr>
-            </thead>
-            <tbody>
-              {allOrders.map((order, index) => (
-                <tr key={index}>
-                  <td>{order.name}</td>
-                  <td>{order.qty}</td>
-                  <td>{order.price}</td>
-                  <td>{order.mode}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        )}
+      {!showOrders ? (
+        <div className="no-orders">
+          <button className="btn" onClick={fetchOrders}>
+            Get started
+          </button>
+          {error && <p className="error">{error}</p>}
         </div>
-      </div>
+      ) : (
+        <div className="orders-list">
+          <h2>All Orders</h2>
+          {loading ? (
+            <p>Loading orders...</p>
+          ) : (
+            <table>
+              <thead>
+                <tr>
+                  <th>Stock</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Mode</th>
+                </tr>
+              </thead>
+              <tbody>
+                {orders.map((order, index) => (
+                  <tr key={index}>
+                    <td>{order.name}</td>
+                    <td>{order.qty}</td>
+                    <td>₹{order.price.toFixed(2)}</td>
+                    <td>{order.mode}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </div>
+      )}
     </div>
   );
 };
