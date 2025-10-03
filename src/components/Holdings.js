@@ -414,60 +414,38 @@ const Holdings = () => {
         </table>
       </div>
 
-      {/* Mobile Card View */}
-      <div className="holdings-cards mobile-view">
-        {allHoldings.map((stock, index) => {
-          const curValue = stock.price * stock.qty;
-          const pl = curValue - stock.avg * stock.qty;
-          const isProfit = pl >= 0.0;
-          const profClass = isProfit ? "profit" : "loss";
-          const dayClass = stock.isLoss ? "loss" : "profit";
+  
 
-          return (
-            <div key={index} className="holding-card">
-              <div className="card-header">
-                <h4 className="stock-name">{stock.name}</h4>
-                <span className={`pl-badge ${profClass}`}>
-                  {pl >= 0 ? "+" : ""}{pl.toFixed(2)}
-                </span>
-              </div>
-              
-              <div className="card-body">
-                <div className="card-row">
-                  <div className="card-item">
-                    <span className="label">Qty</span>
-                    <span className="value">{stock.qty}</span>
-                  </div>
-                  <div className="card-item">
-                    <span className="label">Avg Cost</span>
-                    <span className="value">{stock.avg.toFixed(2)}</span>
-                  </div>
-                  <div className="card-item">
-                    <span className="label">LTP</span>
-                    <span className="value">{stock.price.toFixed(2)}</span>
-                  </div>
-                  <div className="card-item">
-                    <span className="label">Current Value</span>
-                    <span className="value">{curValue.toFixed(2)}</span>
-                  </div>
-                </div>
-                
-                <div className="card-footer">
-                  <div className="footer-item">
-                    <span className="label">Net chg.</span>
-                    <span className={`value ${profClass}`}>{stock.net}</span>
-                  </div>
-                  <div className="footer-item">
-                    <span className="label">Day chg.</span>
-                    <span className={`value ${dayClass}`}>{stock.day}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
-        })}
+      {/* Summary Section */}
+      <div className="summary-section">
+        <div className="summary-row">
+          <div className="summary-col">
+            <h5>
+              {totalInvestment.toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}
+            </h5>
+            <p>Total investment</p>
+          </div>
+          <div className="summary-col">
+            <h5>
+              {currentValue.toLocaleString("en-IN", {
+                maximumFractionDigits: 2,
+              })}
+            </h5>
+            <p>Current value</p>
+          </div>
+          <div className="summary-col">
+            <h5 className={totalPL >= 0 ? "profit" : "loss"}>
+              {totalPL >= 0 ? "+" : ""}
+              {totalPL.toFixed(2)} ({totalPL >= 0 ? "+" : ""}
+              {plPercentage}%)
+            </h5>
+            <p>P&L</p>
+          </div>
+        </div>
       </div>
-     
+
       {/* Chart Section */}
       <div className="chart-section">
         <VerticalGraph data={data} />
