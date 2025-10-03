@@ -127,11 +127,7 @@
   .summary-col h5 {
     font-size: 1.25rem;
   } */
-  /* ===== HOLDINGS COMPONENT STYLES ===== */
-
-/* ===== HOLDINGS COMPONENT STYLES ===== */
-
-/* ===== HOLDINGS COMPONENT STYLES ===== */
+ /* ===== HOLDINGS COMPONENT STYLES ===== */
 
 .holdings-container {
   padding: 1.5rem;
@@ -438,6 +434,7 @@
   
   .holdings-cards {
     display: grid !important;
+    gap: 1rem;
   }
 
   .summary-row {
