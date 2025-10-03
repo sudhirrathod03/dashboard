@@ -291,7 +291,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { VerticalGraph } from "./VerticalGraph";
-import "./Holdings.css";
+import "./holdings.css";
 
 const API_BASE = process.env.REACT_APP_API_URL;
 
