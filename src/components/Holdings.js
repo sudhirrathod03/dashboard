@@ -414,7 +414,59 @@ const Holdings = () => {
         </table>
       </div>
 
-  
+      {/* Mobile Card View */}
+      <div className="holdings-cards mobile-view">
+        {allHoldings.map((stock, index) => {
+          const curValue = stock.price * stock.qty;
+          const pl = curValue - stock.avg * stock.qty;
+          const isProfit = pl >= 0.0;
+          const profClass = isProfit ? "profit" : "loss";
+          const dayClass = stock.isLoss ? "loss" : "profit";
+
+          return (
+            <div key={index} className="holding-card">
+              <div className="card-header">
+                <h4 className="stock-name">{stock.name}</h4>
+                <span className={`pl-badge ${profClass}`}>
+                  {pl >= 0 ? "+" : ""}{pl.toFixed(2)}
+                </span>
+              </div>
+              
+              <div className="card-body">
+                <div className="card-row">
+                  <div className="card-item">
+                    <span className="label">Qty</span>
+                    <span className="value">{stock.qty}</span>
+                  </div>
+                  <div className="card-item">
+                    <span className="label">Avg Cost</span>
+                    <span className="value">{stock.avg.toFixed(2)}</span>
+                  </div>
+                  <div className="card-item">
+                    <span className="label">LTP</span>
+                    <span className="value">{stock.price.toFixed(2)}</span>
+                  </div>
+                  <div className="card-item">
+                    <span className="label">Current Value</span>
+                    <span className="value">{curValue.toFixed(2)}</span>
+                  </div>
+                </div>
+                
+                <div className="card-footer">
+                  <div className="footer-item">
+                    <span className="label">Net chg.</span>
+                    <span className={`value ${profClass}`}>{stock.net}</span>
+                  </div>
+                  <div className="footer-item">
+                    <span className="label">Day chg.</span>
+                    <span className={`value ${dayClass}`}>{stock.day}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
 
       {/* Summary Section */}
       <div className="summary-section">
