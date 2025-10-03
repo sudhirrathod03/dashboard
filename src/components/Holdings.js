@@ -386,7 +386,8 @@ const Holdings = () => {
           <tbody>
             {allHoldings.map((stock, index) => {
               const curValue = stock.price * stock.qty;
-              const isProfit = curValue - stock.avg * stock.qty >= 0.0;
+              const pl = curValue - stock.avg * stock.qty;
+              const isProfit = pl >= 0.0;
               const profClass = isProfit ? "profit" : "loss";
               const dayClass = stock.isLoss ? "loss" : "profit";
 
@@ -394,14 +395,18 @@ const Holdings = () => {
                 <tr key={index}>
                   <td className="stock-name">{stock.name}</td>
                   <td>{stock.qty}</td>
-                  <td>{stock.avg.toFixed(2)}</td>
-                  <td>{stock.price.toFixed(2)}</td>
-                  <td>{curValue.toFixed(2)}</td>
+                  <td>₹{stock.avg.toFixed(2)}</td>
+                  <td>₹{stock.price.toFixed(2)}</td>
+                  <td>₹{curValue.toFixed(2)}</td>
                   <td className={profClass}>
-                    {(curValue - stock.avg * stock.qty).toFixed(2)}
+                    {pl >= 0 ? "+" : ""}₹{pl.toFixed(2)}
                   </td>
-                  <td className={profClass}>{stock.net}</td>
-                  <td className={dayClass}>{stock.day}</td>
+                  <td className={profClass}>
+                    {parseFloat(stock.net) >= 0 ? "+" : ""}{stock.net}
+                  </td>
+                  <td className={dayClass}>
+                    {parseFloat(stock.day) >= 0 ? "+" : ""}{stock.day}
+                  </td>
                 </tr>
               );
             })}

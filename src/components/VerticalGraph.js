@@ -119,8 +119,9 @@ export const VerticalGraph = ({ data }) => {
             size: 11,
             weight: "500",
           },
-          maxRotation: 45,
-          minRotation: 45,
+          maxRotation: 0,
+          minRotation: 0,
+          autoSkip: false,
         },
       },
       y: {
@@ -141,7 +142,7 @@ export const VerticalGraph = ({ data }) => {
   };
 
   return (
-    <div style={{ height: "400px", width: "100%" }}>
+    <div style={{ height: "450px", width: "100%", position: "relative" }}>
       <Bar data={data} options={options} />
     </div>
   );

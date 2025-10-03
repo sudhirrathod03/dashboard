@@ -129,6 +129,8 @@
   } */
   /* ===== HOLDINGS COMPONENT STYLES ===== */
 
+/* ===== HOLDINGS COMPONENT STYLES ===== */
+
 .holdings-container {
   padding: 1.5rem;
   max-width: 100%;
@@ -213,6 +215,19 @@
 }
 
 .loss {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Enhanced color coding for table cells */
+.holdings-table td.profit {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  font-weight: 600;
+}
+
+.holdings-table td.loss {
+  background-color: rgba(220, 53, 69, 0.1);
   color: #dc3545;
   font-weight: 600;
 }
@@ -363,8 +378,16 @@
 .chart-section {
   background: white;
   border-radius: 8px;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 500px;
+  overflow-x: auto;
+}
+
+.chart-section > div {
+  width: 100%;
+  height: 100%;
+  min-width: 800px;
 }
 
 /* ===== TABLET (1024px and below) ===== */
@@ -430,10 +453,16 @@
 
   .chart-section {
     padding: 1rem;
+    min-height: 350px;
+    overflow-x: auto;
+  }
+  
+  .chart-section > div {
+    min-width: 600px;
   }
 }
 
-/* ===== SMALL MOBILE (480px and below) ===== */
+
 @media (max-width: 480px) {
   .holdings-container {
     padding: 0.75rem;
@@ -479,10 +508,16 @@
 
   .chart-section {
     padding: 0.75rem;
+    min-height: 300px;
+    overflow-x: auto;
+  }
+  
+  .chart-section > div {
+    min-width: 500px;
   }
 }
 
-/* ===== LANDSCAPE MODE ===== */
+
 @media (max-height: 500px) and (max-width: 768px) {
   .holdings-container {
     padding: 0.75rem;
