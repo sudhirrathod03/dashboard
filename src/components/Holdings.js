@@ -467,36 +467,7 @@ const Holdings = () => {
           );
         })}
       </div>
-
-      {/* Summary Section */}
-      <div className="summary-section">
-        <div className="summary-row">
-          <div className="summary-col">
-            <h5>
-              {totalInvestment.toLocaleString("en-IN", {
-                maximumFractionDigits: 2,
-              })}
-            </h5>
-            <p>Total investment</p>
-          </div>
-          <div className="summary-col">
-            <h5>
-              {currentValue.toLocaleString("en-IN", {
-                maximumFractionDigits: 2,
-              })}
-            </h5>
-            <p>Current value</p>
-          </div>
-          <div className="summary-col">
-            <h5 className={totalPL >= 0 ? "profit" : "loss"}>
-              {totalPL >= 0 ? "+" : ""}
-              {totalPL.toFixed(2)} ({totalPL >= 0 ? "+" : ""}
-              {plPercentage}%)
-            </h5>
-            <p>P&L</p>
-          </div>
-        </div>
-      </div>
+     
 
       {/* Chart Section */}
       <div className="chart-section">
