@@ -468,7 +468,6 @@ const Holdings = () => {
         })}
       </div>
      
-
       {/* Chart Section */}
       <div className="chart-section">
         <VerticalGraph data={data} />
