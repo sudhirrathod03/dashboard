@@ -252,11 +252,12 @@
   padding: 2rem 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
+  display: block !important;
 }
 
 .chart-section > div {
   width: 100%;
-  height: 450px;
+  height: 500px;
 }
 
 /* ===== TABLET (1024px and below) ===== */
@@ -390,7 +391,6 @@
 
   .chart-section {
     padding: 0.75rem;
-    min-height: 300px;
   }
   
   .chart-section > div {
