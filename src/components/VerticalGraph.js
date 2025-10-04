@@ -85,8 +85,8 @@ export const VerticalGraph = ({ data }) => {
         },
         ticks: {
           font: {
-            size: 9,
-            weight: "500",
+            size: 5,
+            weight: "400",
           },
           maxRotation: 0,
           minRotation: 0,
