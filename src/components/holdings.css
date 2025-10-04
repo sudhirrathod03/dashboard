@@ -244,7 +244,7 @@
 }
 
 /* Chart Section */
-.chart-section {
+.holdings-container .chart-section {
   background: white;
   border-radius: 8px;
   padding: 2rem 1.5rem;
@@ -253,17 +253,21 @@
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
-}
-
-.chart-wrapper {
-  width: 100%;
-  height: 500px;
-  display: block;
   position: relative;
+  min-height: 500px;
 }
 
-.chart-section canvas {
+.holdings-container .chart-wrapper {
+  width: 100% !important;
+  height: 500px !important;
   display: block !important;
+  position: relative !important;
+}
+
+.holdings-container .chart-section canvas {
+  display: block !important;
+  max-width: 100% !important;
+  height: auto !important;
 }
 
 /* ===== TABLET (1024px and below) ===== */

@@ -111,10 +111,14 @@ export const VerticalGraph = ({ data }) => {
   };
 
   if (!data || !data.datasets || data.datasets.length === 0) {
-    return <div style={{ padding: "2rem", textAlign: "center" }}>No data available for chart</div>;
+    return <div style={{ padding: "2rem", textAlign: "center", color: "#666" }}>No data available for chart</div>;
   }
 
+  console.log("Chart data:", data); // Debug log
+
   return (
-    <Bar data={data} options={options} />
+    <div style={{ width: "100%", height: "100%", minHeight: "500px" }}>
+      <Bar data={data} options={options} />
+    </div>
   );
 };
