@@ -200,7 +200,7 @@ const BuyActionWindow = ({ uid }) => {
         mode: "BUY"
       };
 
-      const response = await axios.post(`${API_BASE}/newOrders`, orderData);
+      const response = await axios.post(`${API_BASE}/newOrder`, orderData);
       console.log("Order placed successfully:", response.data);
       
       // ✅ Trigger order refresh
