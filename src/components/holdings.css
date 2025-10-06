@@ -1,5 +1,7 @@
 /* ===== HOLDINGS COMPONENT STYLES ===== */
 
+/* ===== HOLDINGS COMPONENT STYLES ===== */
+
 .holdings-container {
   padding: 1.5rem;
   max-width: 100%;
@@ -244,30 +246,17 @@
 }
 
 /* Chart Section */
-.holdings-container .chart-section {
+.chart-section {
   background: white;
   border-radius: 8px;
   padding: 2rem 1.5rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.5rem;
-  display: block !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  position: relative;
   min-height: 500px;
 }
 
-.holdings-container .chart-wrapper {
-  width: 100% !important;
-  height: 500px !important;
-  display: block !important;
-  position: relative !important;
-}
-
-.holdings-container .chart-section canvas {
-  display: block !important;
-  max-width: 100% !important;
-  height: auto !important;
+.chart-section > div {
+  width: 100%;
+  height: 450px;
 }
 
 /* ===== TABLET (1024px and below) ===== */
@@ -291,14 +280,6 @@
 
   .summary-col h5 {
     font-size: 1.25rem;
-  }
-
-  .chart-section {
-    padding: 1.5rem;
-  }
-
-  .chart-wrapper {
-    height: 400px;
   }
 }
 
@@ -401,9 +382,10 @@
 
   .chart-section {
     padding: 0.75rem;
+    min-height: 300px;
   }
   
-  .chart-wrapper {
+  .chart-section > div {
     height: 300px;
   }
 }
@@ -421,4 +403,24 @@
   .summary-section {
     padding: 0.75rem;
   }
+}
+
+/* Add this to ensure chart section is always visible on all screen sizes */
+.chart-section {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-height: 500px;
+  display: block !important; /* Force display on all screens */
+}
+
+/* Ensure summary section is also always visible */
+.summary-section {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  display: block !important; /* Force display on all screens */
 }
