@@ -1,6 +1,3 @@
-
-
-
 /* Buy Action Window Overlay */
 .buy-action-overlay {
   position: fixed;
@@ -167,83 +164,128 @@
 /* ===== RESPONSIVE - MOBILE (768px and below) ===== */
 @media (max-width: 768px) {
   .buy-action-overlay {
-    padding: 0;
+    padding: 10px;
     align-items: center;
     justify-content: center;
   }
 
   .buy-action-window {
-    max-width: 95%;
-    width: 95%;
-    border-radius: 12px;
-    max-height: 90vh;
-    margin: 20px;
+    max-width: 75%;
+    width: 75%;
+    border-radius: 8px;
+    max-height: 60vh;
+    margin: 0;
   }
 
   .buy-action-header {
-    padding: 16px;
+    padding: 10px 12px;
   }
 
   .buy-action-header h3 {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 
   .buy-action-content {
-    padding: 16px;
+    padding: 12px;
+  }
+
+  .input-group {
+    margin-bottom: 12px;
+  }
+
+  .input-group label {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .input-group input {
+    padding: 8px 10px;
+    font-size: 0.85rem;
+  }
+
+  .margin-info {
+    font-size: 0.8rem;
+    padding: 8px;
   }
 
   .buy-action-footer {
-    padding: 16px;
+    padding: 10px 12px;
     flex-direction: row;
+    gap: 6px;
   }
 
   .buy-action-footer button {
-    padding: 14px;
+    padding: 9px 12px;
+    font-size: 0.8rem;
+  }
+
+  .close-btn {
+    width: 26px;
+    height: 26px;
+    font-size: 1.3rem;
   }
 }
 
 /* ===== SMALL MOBILE (480px and below) ===== */
 @media (max-width: 480px) {
   .buy-action-overlay {
-    padding: 10px;
+    padding: 8px;
   }
 
   .buy-action-window {
-    width: calc(100% - 20px);
-    max-width: calc(100% - 20px);
-    margin: 10px;
+    width: 80%;
+    max-width: 80%;
+    max-height: 55vh;
+    margin: 0;
+    border-radius: 8px;
   }
 
   .buy-action-header {
-    padding: 14px;
+    padding: 8px 10px;
   }
 
   .buy-action-header h3 {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
   .buy-action-content {
-    padding: 14px;
+    padding: 10px;
   }
 
   .input-group {
-    margin-bottom: 16px;
+    margin-bottom: 10px;
+  }
+
+  .input-group label {
+    font-size: 0.75rem;
+    margin-bottom: 4px;
   }
 
   .input-group input {
-    padding: 10px;
-    font-size: 0.95rem;
+    padding: 7px 9px;
+    font-size: 0.8rem;
+  }
+
+  .margin-info {
+    font-size: 0.75rem;
+    padding: 7px;
   }
 
   .buy-action-footer {
-    padding: 14px;
+    padding: 8px 10px;
     flex-direction: column;
-    gap: 8px;
+    gap: 5px;
   }
 
   .buy-action-footer button {
-    padding: 12px;
-    font-size: 0.9rem;
+    padding: 9px;
+    font-size: 0.75rem;
     width: 100%;
+  }
+
+  .close-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 1.2rem;
   }
 }

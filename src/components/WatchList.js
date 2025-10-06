@@ -144,7 +144,7 @@ import {
   MoreHoriz,
 } from "@mui/icons-material";
 import { watchlist } from "../data/data";
- import { DoughnutChart } from "./DoughnoutChart";
+import { DoughnutChart } from "./DoughnoutChart";
 import "./watchlist.css";
 
 const labels = watchlist.map((subArray) => subArray["name"]);
@@ -235,14 +235,14 @@ const WatchListActions = ({ uid }) => {
   const generalContext = useContext(GeneralContext);
 
   const handleBuyClick = (e) => {
-    e.stopPropagation(); // Prevent triggering parent onClick
+    e.stopPropagation(); 
     generalContext.openBuyWindow(uid);
   };
 
   const handleSellClick = (e) => {
-    e.stopPropagation(); // Prevent triggering parent onClick
-    // Add your sell window logic here, similar to buy
-    generalContext.openBuyWindow(uid); // Or openSellWindow if you have one
+    e.stopPropagation(); 
+
+    generalContext.openBuyWindow(uid); 
   };
 
   return (
