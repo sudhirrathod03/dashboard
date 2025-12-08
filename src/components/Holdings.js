@@ -230,7 +230,7 @@ import { VerticalGraph } from "./VerticalGraph";
 import "./holdings.css";
 
 const API_BASE = process.env.VITE_API_URL;
-
+console.log(API_BASE);
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
   const [loading, setLoading] = useState(true);
