@@ -1,14 +1,16 @@
 
 import React, { useState,lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
+
 import WatchList from "./WatchList";
+import { GeneralContextProvider } from "./GeneralContext";
+import "./dashboard.css";
+
 const Summary = lazy(() => import("./Summary"));
 const Orders = lazy(() => import("./Orders"));
 const Holdings = lazy(() => import("./Holdings"));
 const Positions = lazy(() => import("./Positions"));
 const Apps = lazy(() => import("./Apps"));
-import { GeneralContextProvider } from "./GeneralContext";
-import "./dashboard.css";
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
