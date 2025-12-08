@@ -229,7 +229,7 @@ import axios from "axios";
 import { VerticalGraph } from "./VerticalGraph";
 import "./holdings.css";
 
-const API_BASE = process.env.REACT_APP_API_URL;
+const API_BASE = process.env.VITE_API_URL;
 
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
