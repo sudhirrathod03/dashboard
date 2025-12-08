@@ -1,16 +1,15 @@
 
-import React, { useState,lazy, Suspense } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
+import Apps from "./Apps";
 
+import Holdings from "./Holdings";
+import Orders from "./Orders";
+import Positions from "./Positions";
+import Summary from "./Summary";
 import WatchList from "./WatchList";
 import { GeneralContextProvider } from "./GeneralContext";
 import "./dashboard.css";
-
-const Summary = lazy(() => import("./Summary"));
-const Orders = lazy(() => import("./Orders"));
-const Holdings = lazy(() => import("./Holdings"));
-const Positions = lazy(() => import("./Positions"));
-const Apps = lazy(() => import("./Apps"));
 
 const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -39,6 +38,7 @@ const Dashboard = () => {
         </GeneralContextProvider>
       </aside>
 
+      {/* Overlay */}
       {isSidebarOpen && (
         <div 
           className="sidebar-overlay"
@@ -46,18 +46,17 @@ const Dashboard = () => {
         />
       )}
 
-
+      {/* Main Content */}
       <main className="dashboard-main">
-      <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route exact path="/" element={<Summary />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/holdings" element={<Holdings />} />
           <Route path="/positions" element={<Positions />} />
+          {/* <Route path="/funds" element={<Funds />} /> */}
           <Route path="/apps" element={<Apps />} />
         </Routes>
-      </Suspense>
-    </main>
+      </main>
     </div>
   );
 };
