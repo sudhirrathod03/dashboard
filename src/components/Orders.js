@@ -175,7 +175,7 @@ import axios from "axios";
 import GeneralContext from "./GeneralContext";
 import "./order.css";
 
-const API_BASE = process.env.VITE_API_URL;
+const API_BASE = import.meta.env.VITE_API_URL;
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
@@ -184,9 +184,6 @@ const Orders = () => {
   const [error, setError] = useState("");
 
   const generalContext = useContext(GeneralContext);
-
-  // ✅ Wrap fetchOrders in useCallback to memoize the function
-  // It will not be recreated on every render unless its own dependencies change.
   const fetchOrders = useCallback(async () => {
     try {
       setLoading(true);
