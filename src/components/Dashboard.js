@@ -1,7 +1,7 @@
 
 import React, { useState,lazy, Suspense } from "react";
 import { Route, Routes } from "react-router-dom";
-
+import WatchList from "./WatchList";
 const Summary = lazy(() => import("./Summary"));
 const Orders = lazy(() => import("./Orders"));
 const Holdings = lazy(() => import("./Holdings"));
