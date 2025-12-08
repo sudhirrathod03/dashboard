@@ -229,7 +229,7 @@ import axios from "axios";
 import { VerticalGraph } from "./VerticalGraph";
 import "./holdings.css";
 
-const API_BASE = process.env.VITE_API_URL;
+const API_BASE = 'https://your-backend-name.onrender.com';
 
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
