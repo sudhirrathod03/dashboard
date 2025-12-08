@@ -175,7 +175,7 @@ import axios from "axios";
 import GeneralContext from "./GeneralContext";
 import "./order.css";
 
-const API_BASE = process.env.REACT_APP_API_URL;
+const API_BASE = process.env.VITE_API_URL;
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
