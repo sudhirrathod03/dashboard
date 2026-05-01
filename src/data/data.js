@@ -167,7 +167,6 @@ export const holdings = [
     day: "+0.32%",
   },
 ];
-
 // positions
 export const positions = [
   {
